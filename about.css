@@ -5,17 +5,17 @@
     --mint: #09bfb4;
     --darkgreen: #089b91;
 
+    --color1: #141414;
     --color2: #333333;
     --color3: #191919;
     --color4: #5d7681;
     --color5: #bababa;
-    --color8: #141414;
 }
 
 body {
     font-family: 'Stylish', sans-serif;
     min-height: 100vh;
-    background-color: var(--color8);
+    background-color: var(--color1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@ body {
 
 @media (max-width: 640px) {
     html {
-        font-size: 12px;
+        font-size: 11px;
     }
     .container {
         display: grid;
@@ -56,6 +56,9 @@ body {
         width: 100px;
         height: 59px;
         border-radius: 20px;
+    }
+    .left_section .skills ol li ul li {
+        font-size: 0.7rem;
     }
 }
 
@@ -131,7 +134,7 @@ body {
 
 .project {
     background-color: var(--color4);
-    padding: 30px;
+    padding: 2rem;
 }
 
 .project ul li {
@@ -141,7 +144,6 @@ body {
     height: 59px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    /* border-radius: 20px; */
     transition: background-color 0.5s linear;
 }
 
@@ -161,7 +163,7 @@ body {
 /* ==============================left -> skills============s================== */
 
 .skills {
-    padding: 30px;
+    padding: 2rem;
 }
 
 .skills ol li {
@@ -186,7 +188,7 @@ body {
 /* ==============================left -> info============================== */
 
 .info {
-    padding: 30px;
+    padding: 2rem;
     background-color: var(--color4);
 }
 
@@ -251,7 +253,8 @@ body {
 /* =============================== svg =============================== */
 
 svg {
-    animation: fill 0.5s linear forwards 2s;
+    animation: fill 0.5s linear forwards 2s, beat 1s infinite 2s;
+
     margin-left: -1rem;
 }
 
@@ -260,17 +263,27 @@ svg path:hover {
     cursor: pointer;
 }
 
+@keyframes beat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+}
+
 @keyframes fill {
     from {
         fill: transparent;
     }
     to {
-        fill: var(--mint);
+        fill: var(--darkgreen);
     }
 }
 
 svg path {
-    stroke: var(--mint);
+    stroke: var(--darkgreen);
     stroke-width: 1;
     animation: stroke 1s linear forwards;
 }
